@@ -1,6 +1,9 @@
 package com.inja.inja2.modules;
 
-import com.google.gson.GsonBuilder;
+import android.support.annotation.Nullable;
+
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
 
 import javax.inject.Singleton;
 
@@ -33,5 +36,13 @@ public class NetworkingModules {
     {
         return retrofit.create(SpotService.class);
     }
+
+    @Provides
+    @Singleton
+    public CallbackManager provideCallbackManager()
+    {
+        return CallbackManager.Factory.create();
+    }
+
 
 }

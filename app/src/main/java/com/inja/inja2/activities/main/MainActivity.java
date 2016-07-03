@@ -1,5 +1,6 @@
 package com.inja.inja2.activities.main;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,15 +11,17 @@ import android.view.MenuItem;
 
 import com.inja.inja2.InjaApplication;
 import com.inja.inja2.R;
+import com.inja.inja2.model.InjaSpot;
 import com.inja.inja2.modules.SpotService;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.inject.Inject;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ISpotCrud {
 
     /**
      * Holder for the main fragment.
@@ -81,5 +84,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void addInjaSpot(InjaSpot spot) {
+        
+    }
+
+    @Override
+    public void getSpots(Location location) {
+        //spotService.getSpots(convertLocation(location));
+    }
+
+    private Map<String, String> convertLocation(Location location) {
+        return null;
+    }
+
+    @Override
+    public void voteUp(InjaSpot spot) {
+
     }
 }

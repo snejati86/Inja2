@@ -7,6 +7,8 @@ import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.QueryMap;
 
 /**
@@ -15,6 +17,6 @@ import retrofit2.http.QueryMap;
 public interface SpotService {
 
     @GET("spots")
-    Call<List<InjaSpot>> getSpots(@QueryMap Map<String,String> options);
+    Call<List<InjaSpot>> getSpots(@QueryMap Map<String,String> options, @Header("Authorization") String token);
 
 }
